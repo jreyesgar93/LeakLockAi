@@ -13,15 +13,19 @@ requests.egg-info/
 *.pyc
 *.swp
 *.egg
-env/
 .venv/
 .eggs/
 .tox/
 .pytest_cache/
 .vscode/
 .eggs/
-
+__pycache__
 .workon
+.env
+*.env
+env/
+envs/
+leak_lock_ai/envs/*
 
 dist
 
