@@ -1,0 +1,42 @@
+version: "3.8"
+
+services: 
+  dev:
+    image: leak_lock_ai/leak_lock_ai:latest-dev
+    working_dir: /home/leak_lock_ai
+    entrypoint: uvicorn leak_lock_ai.main:app --reload --host 0.0.0.0
+    build: 
+      target: development
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 8000:8000
+    volumes:
+      - .:/home/leak_lock_ai
+    
+    environment: 
+      - MODE=development
+  
+  prod:
+    image: leak_lock_ai/leak_lock_ai:latest-prod
+    working_dir: /production/leak_lock_ai
+    build: 
+      target: production
+      context: .
+      dockerfile: Dockerfile
+  
+  test:
+    image: leak_lock_ai/leak_lock_ai:latest-test
+    working_dir: /home/leak_lock_ai
+    entrypoint: pytest
+    build: 
+      target: testing
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - 8000:8000
+    volumes:
+      - .:/home/leak_lock_ai
+    
+    environment: 
+      - MODE=testing
