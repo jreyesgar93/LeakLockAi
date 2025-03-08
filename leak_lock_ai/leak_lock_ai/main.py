@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from leak_lock_ai.utils.settings import Settings
-from leak_lock_ai.routers import predictions, chat, sensors
+from leak_lock_ai.routers import predictions, sensors, chatgpt
 
 
 app = FastAPI()
@@ -13,5 +13,5 @@ async def root():
 
 
 app.include_router(predictions.router, prefix="/api/v1")
-app.include_router(chat.router, prefix="/api/v1")
+app.include_router(chatgpt.router, prefix="/api/v1")
 app.include_router(sensors.router, prefix="/api/v1")
