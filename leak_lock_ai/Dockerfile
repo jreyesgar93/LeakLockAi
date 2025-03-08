@@ -2,7 +2,7 @@ FROM python:3.8 as base
 
 WORKDIR /home/leak_lock_ai
 
-COPY requirements.txt requirements.txt
+COPY . .
 
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
