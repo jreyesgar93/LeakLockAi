@@ -1,0 +1,22 @@
+import sys
+import os
+import unittest
+# Add the project root to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
+from leak_lock_ai.services import prediction_service
+
+class TestPredictionsService(unittest.TestCase):
+
+    def test_load_latest_predictions(self):
+        # Mock data or set up necessary preconditions
+        result = prediction_service.load_latest_predictions()
+        # Assertions to verify the expected outcome
+        self.assertIsInstance(result, list)
+        self.assertGreater(len(result), 0)
+        self.assertIn('Sensor_ID', result[0])
+        self.assertIn('Leak_Probability', result[0])
+
+if __name__ == '__main__':
+    unittest.main()
