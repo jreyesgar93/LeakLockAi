@@ -13,11 +13,11 @@ This repository contains FastAPI-based backend services, machine learning infere
 - **Automated Reports**: Uses **LLMs (ChatGPT)** to generate daily **pipeline health reports**.
 - **Scalable & Containerized**: Runs on **AWS ECS** and is containerized using **Docker**.
 
-## ** Getting Started**
+## **Getting Started**
 
-### **1️ Prerequisites**
+### **1 Prerequisites**
 Ensure you have the following installed:
-- **Python 3.8+ (mayu need to update package versions for)**
+- **Python 3.8+ (may need to update package versions for)**
 - **pip (Python Package Manager)**
 - **Docker (For containerized deployment)**
 - **Virtual Environment (Recommended)**
@@ -39,7 +39,7 @@ Install required dependencies:
 ```
 pip install -r requirements.txt
 ```
-### **Setting Up Environment Variables**
+### **3 Setting Up Environment Variables**
 
 1. Create an /env directory in the root of the project.
 ```
@@ -53,7 +53,7 @@ mkdir env
 3. Populate these .env files with the necessary environment variables.
 `CHATGPT_API_KEY=your_openai_api_key`
 
-### **Running with Docker**
+### **4 Running with Docker**
 
 1. Build Docker image
 ```
@@ -69,7 +69,7 @@ make up-dev
 http://localhost:8000/docs
 ```
 
-### **Future Improvements**
+### **5 Future Improvements**
 - Future Improvements
 - Enhance real-time dashboard integration.
 - Optimize ML model performance and inference time.
